@@ -1,0 +1,63 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{geometry}%
+\geometry{tmargin=1cm,lmargin=10cm}%
+\usepackage{amsmath}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\section{Find the normalization factor A, assuming that the network has a power law degree distribution with 2 < \textbackslash{}gamma < 3, with minimum degree k\_min and maximum degree k\_max.}%
+\label{sec:FindthenormalizationfactorA,assumingthatthenetworkhasapowerlawdegreedistributionwith2<gamma<3,withminimumdegreekminandmaximumdegreekmax.}%
+From the textbook, we know that %
+\begin{alignat*}{2}%
+C&=\frac{1-\gamma}{k_{max}^{1-\gamma}-k_{min}^{1-\gamma}}\\%
+\end{alignat*}%
+Also applying the normalization condition to q\_k, and substituting p\_k into the equation, we obtain%
+\begin{alignat*}{2}%
+\int_{k_{min}}^{k_{max}}AkCk^{-\gamma}dk&=1\\%
+AC\int_{k_{min}}^{k_{max}}k^{1-\gamma}dk&=1\\%
+AC(\frac{k_{max}^{2-\gamma}-k_{min}^{2-\gamma}}{2-\gamma})&=1\\%
+AC\int_{k_{min}}^{k_{max}}k^{1-\gamma}dk&=1\\%
+\end{alignat*}%
+Solve for A, making sure to substitute the C value and simplify%
+\begin{alignat*}{2}%
+A&=\frac{(2-\gamma)(k_{max}^{1-\gamma}-k_{min}^{1-\gamma})}{(1-\gamma)(k_{max}^{2-\gamma}-k_{min}^{2-\gamma})}\\%
+\end{alignat*}
+
+%
+\section{In the configuration model q\_k is also the probability that a randomly chosen node has a neighbor with degree k. What is the average degree of the neighbors of a randomly chosen node?}%
+\label{sec:Intheconfigurationmodelqkisalsotheprobabilitythatarandomlychosennodehasaneighborwithdegreek.Whatistheaveragedegreeoftheneighborsofarandomlychosennode?}%
+We want to find the average, or expected, value of k in respect to q\_k. We denote this k as <k\_q> and substitute the values for q\_k and then p\_k in the continuous expectation formula%
+\begin{alignat*}{2}%
+<k_q>&=\int_{k_{min}}^{k_{max}}kAkCk^{-\gamma}dk\\%
+<k_q>&=AC\int_{k_{min}}^{k_{max}}k^{2-\gamma}dk\\%
+\end{alignat*}%
+Substitute in the values for A and for C and solve the integral%
+\begin{alignat*}{2}%
+<k_q>&=\frac{(2-\gamma)(k_{max}^{3-\gamma}-k_{min}^{3-\gamma})}{(3-\gamma)(k_{max}^{2-\gamma}-k_{min}^{2-\gamma})}\\%
+\end{alignat*}
+
+%
+\section{Calculate the average degree of the neighbors of a randomly chosen node in a network with N = 10\^{}4, \textbackslash{}gamma= 2.3, k\_min= 1 and k\_max= 1000. Compare the result with the average degree of the network,〈k〉.}%
+\label{sec:CalculatetheaveragedegreeoftheneighborsofarandomlychosennodeinanetworkwithN=104,gamma=2.3,kmin=1andkmax=1000.Comparetheresultwiththeaveragedegreeofthenetwork,k.}%
+Substitute the given values into the equation for <k\_q>%
+\[%
+61.23431879119234%
+\]%
+Use the textbook equation and substitute the value for C to find the equation for <k>%
+\begin{alignat*}{2}%
+<k>&=\frac{1-\gamma}{k_{max}^{1-\gamma}-k_{min}^{1-\gamma}}\cdot\frac{(k_{max}^{2-\gamma}-k_{min}^{2-\gamma})}{(2-\gamma)}\\%
+\end{alignat*}%
+Substitute the given values into the equation for <k>%
+\[%
+3.78827590390276%
+\]
+
+%
+\end{document}
