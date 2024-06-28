@@ -1,0 +1,54 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{geometry}%
+\geometry{tmargin=1cm,lmargin=10cm}%
+\usepackage{amsmath}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\section{Calculate, using the rate equation approach, the in{-} and out{-} degree distribution of the resulting network.}%
+\label{sec:Calculate,usingtherateequationapproach,thein{-}andout{-}degreedistributionoftheresultingnetwork.}%
+Let us denote with N(k,t) the number of nodes with degree k at time t. Then the rate equation is%
+\begin{alignat*}{2}%
+m[\prod(k-1)N(k-1,t)-\prod(k)N(k,t)]\\%
+\end{alignat*}%
+Substitutiong in the given probability, we can simplify the rate equation to%
+\begin{alignat*}{2}%
+m[N(k-1,t)\cdot\frac{(k-1)+A}{mt+At}-N(k,t)\cdot\frac{k+A}{mt+At}]\\%
+\end{alignat*}%
+where mt is the sum of all the in{-}degrees.%
+When t is large, we assume that N(k,t)=t*p\_k such that%
+\begin{alignat*}{2}%
+p_k&=m[p_{k-1}\cdot\frac{(k-1)+A}{m+A}-p_k\cdot\frac{k+A}{m+A}]\\%
+\end{alignat*}%
+which simplifies to%
+\begin{alignat*}{2}%
+p_k&=p_{k-1}\cdot\frac{m(k-1+A)}{k+m+2A}\\%
+\end{alignat*}
+
+%
+\section{By using the properties of the Gamma and Beta functions, can you find a power{-}law scaling for the in{-}degree distribution?}%
+\label{sec:ByusingthepropertiesoftheGammaandBetafunctions,canyoufindapower{-}lawscalingforthein{-}degreedistribution?}%
+Using a recursive approach we see that%
+\begin{alignat*}{2}%
+p_k&=p_1\prod_{j=1}^{k-1}\frac{m(j+A)}{j+1+m+2A}\\%
+\end{alignat*}%
+Using the properties of the Gamma and Beta functions, we get%
+\begin{alignat*}{2}%
+p_k&=k^{-2+\frac{A}{m+A}}\\%
+\end{alignat*}%
+when k is sufficiently large.
+
+%
+\section{For A = 0 the scaling exponent of the in{-}degree distribution is different from gamma = 3, the exponent of the Barabási{-}Albert model. Why?}%
+\label{sec:ForA=0thescalingexponentofthein{-}degreedistributionisdifferentfromgamma=3,theexponentoftheBarabsi{-}Albertmodel.Why?}%
+The Barabási{-}Albert model is undirected so whe attaching new nodes to the graph, it considers the total number of degrees in the graph rather than just the in{-}degrees. This affects the degree distribution, and as a result, the scaling exponent.
+
+%
+\end{document}
