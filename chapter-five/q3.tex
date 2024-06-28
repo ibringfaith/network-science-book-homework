@@ -1,0 +1,46 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{geometry}%
+\geometry{tmargin=1cm,lmargin=10cm}%
+\usepackage{amsmath}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\section{Use the rate equation approach to show that the directed copying model leads to a scale{-}free network with incoming degree exponent gamma\_i=(2{-}p)/(1{-}p).}%
+\label{sec:Usetherateequationapproachtoshowthatthedirectedcopyingmodelleadstoascale{-}freenetworkwithincomingdegreeexponentgammai=(2{-}p)/(1{-}p).}%
+Let us denote with N(k,t) the number of nodes with degree k at time t and the degree distribution%
+\begin{alignat*}{2}%
+p_k(t)&=\frac{N(k,t)}{N(t)}\\%
+\end{alignat*}%
+The expected change in N(k,t) after one timestep is%
+\begin{alignat*}{2}%
+N(k, t+1) - N(k, t))\\%
+= p[(k-1)\frac{N(k-1,t)}{N(t)}-k\frac{N(k,t)}{N(t)}] + (1-p)(\frac{N(k-1,t)}{N(t)})\\%
+= p[\frac{(k-1)N(k-1,t)-kN(k,t)}{t}] + (1-p)(\frac{N(k-1, t)-N(k,t)}{t})\\%
+\end{alignat*}%
+When t is large, we assume that N(k,t)=t*p\_k such that the equation now becomes%
+\begin{alignat*}{2}%
+p_k&=p[(k-1)p_{k-1}-kp_k] + (1-p)[p_k-p_{k-1}]\\%
+\end{alignat*}%
+Rewriting the equation we get%
+\begin{alignat*}{2}%
+p_k&=p_{k-1}\cdot\frac{k-1+(1/p)}{k+1+(1/p)}\\%
+\end{alignat*}%
+Using a recursive approach we see that%
+\begin{alignat*}{2}%
+p_k&=C\prod_{j=i}^{k}\frac{j-1+(1/p)}{j+1+(1/p)}\\%
+\end{alignat*}%
+which is about%
+\begin{alignat*}{2}%
+k^{\frac{-(2-p)}{(1-p)}}\\%
+\end{alignat*}%
+when k is sufficiently large.
+
+%
+\end{document}
