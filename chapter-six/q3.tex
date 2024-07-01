@@ -1,0 +1,50 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{geometry}%
+\geometry{tmargin=1cm,lmargin=10cm}%
+\usepackage{amsmath}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\section{Calculate the degree exponent, and its dependence on the parameter a.}%
+\label{sec:Calculatethedegreeexponent,anditsdependenceontheparametera.}%
+Rate of change for the nodes%
+\begin{alignat*}{2}%
+m\frac{ak_a}{a\sum_{k_a}k_a+\sum_{k_1}k_1}\\%
+m\frac{k_1}{a\sum_{k_a}k_a+\sum_{k_1}k_1}\\%
+\end{alignat*}%
+We know that%
+\begin{alignat*}{2}%
+\sum_{k_a}k_a + \sum_{k_1}k_1 = 2mt\\%
+\end{alignat*}%
+We substitute this into the rate of change%
+\begin{alignat*}{2}%
+m\frac{ak_a}{2mt} = \frac{ak_a}{2t}\\%
+m\frac{k_1}{2mt} = \frac{k_1}{2t}\\%
+\end{alignat*}%
+After differentiating, we get%
+\begin{alignat*}{2}%
+k_a \propto t^{\frac{a}{2}}\\%
+k_1 \propto t^{\frac{1}{2}}\\%
+\end{alignat*}%
+When we integrate, we find that the degree exponent is%
+\begin{alignat*}{2}%
+1 + \frac{1}{a}\\%
+\end{alignat*}
+
+%
+\section{Calculate the stationary degree distribution of the network.}%
+\label{sec:Calculatethestationarydegreedistributionofthenetwork.}%
+We use our calculations from the previous section to find the stationary degree distribution of the network.%
+\begin{alignat*}{2}%
+P(k) = \frac{1}{2}k^{-(1+\frac{1}{a})} + \frac{1}{2}k^{-3}\\%
+\end{alignat*}
+
+%
+\end{document}
