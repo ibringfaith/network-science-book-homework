@@ -1,0 +1,47 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{geometry}%
+\geometry{tmargin=1cm,lmargin=10cm}%
+\usepackage{amsmath}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\section{Derive the time evolution of the node degrees, telling us how many dances a node had.}%
+\label{sec:Derivethetimeevolutionofthenodedegrees,tellingushowmanydancesanodehad.}%
+Based on the given the probability of node i receiving a dance invitation, the rate of change in the number of dance partners a node has, or the degree of the node, over time is also%
+\begin{alignat*}{2}%
+\frac{\eta_i}{t<\eta>}\\%
+\end{alignat*}%
+To solve for the time evolution, we integrate over the amount of time that node is at the party. We add one since there is one already partying node.%
+\begin{alignat*}{2}%
+k(t, t_i, \eta_i) &= 1+\int_{t_i}^{t}\frac{\eta_i}{t<\eta>}dt\\%
+k(t, t_i, \eta_i) &= 1+\frac{\eta_i}{<\eta>}\frac{t}{t_i}\\%
+\end{alignat*}
+
+%
+\section{Derive the degree distribution of nodes with attractiveness eta.}%
+\label{sec:Derivethedegreedistributionofnodeswithattractivenesseta.}%
+Solve for the probability that a node with attractiveness eta has degree k.%
+\begin{alignat*}{2}%
+P(k|<\eta>)&=\frac{d}{dk(t, t_i, \eta_i)}\cdot t_i \cdot P(t_i)\\%
+P(k|<\eta>)&=\frac{d}{dk(t, t_i, \eta_i)}\cdot t_i \cdot \frac{1}{t}\\%
+P(k|<\eta>)&=\frac{d}{dk(t, t_i, \eta_i)}\cdot te^{-\frac{<\eta>(k(t, t_i, \eta_i)-1)}{\eta_i}} \cdot \frac{1}{t}\\%
+P(k|<\eta>)&=\frac{d}{dk(t, t_i, \eta_i)}\cdot e^{-\frac{<\eta>(k(t, t_i, \eta_i)-1)}{\eta_i}}\\%
+P(k|<\eta>)&=\frac{\eta}{\eta_i}e^{-\frac{<\eta>(k(t, t_i, \eta_i)-1)}{\eta_i}}\\%
+\end{alignat*}
+
+%
+\section{If half of the nodes have eta = 2, and the other half eta = 1, what is the degree distribution of the network after a sufficiently long time?}%
+\label{sec:Ifhalfofthenodeshaveeta=2,andtheotherhalfeta=1,whatisthedegreedistributionofthenetworkafterasufficientlylongtime?}%
+\begin{alignat*}{2}%
+\frac{1}{2}\frac{3}{4}e^{-\frac{3(k(t, t_i, \eta_i)-1)}{4}} + \frac{1}{2} \frac{3}{2} \frac{e^{-3(k(t, t_i, \eta_i)-1)}}{2}\\%
+\end{alignat*}
+
+%
+\end{document}
