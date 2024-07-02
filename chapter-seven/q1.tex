@@ -1,0 +1,54 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{geometry}%
+\geometry{tmargin=1cm,lmargin=10cm}%
+\usepackage{amsmath}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\section{Express the joint probability e\_\{kk'\} in terms of N,〈k〉, number of nodes with degree k, N\_k, and E\_\{kk'\} (note that E\_\{kk'\} is twice the number of links when k = k').}%
+\label{sec:ExpressthejointprobabilityekkintermsofN,k,numberofnodeswithdegreek,Nk,andEkk(notethatEkkistwicethenumberoflinkswhenk=k).}%
+The textbook shows that%
+\begin{alignat*}{2}%
+E_{kk'}&=e_{kk'}<k>N\\%
+\end{alignat*}%
+We rewrite this to get%
+\begin{alignat*}{2}%
+e_{kk'}&=\frac{E_{kk'}}{<k>N}\\%
+\end{alignat*}
+
+%
+\section{Express the conditional probability P(k'|k) in terms of N, 〈k〉, N\_k, and the number of links connecting nodes of degree k and k', E\_\{kk'\} (note that E\_\{kk'\} is twice the number of links when k = k').}%
+\label{sec:ExpresstheconditionalprobabilityP(k|k)intermsofN,k,Nk,andthenumberoflinksconnectingnodesofdegreekandk,Ekk(notethatEkkistwicethenumberoflinkswhenk=k).}%
+\begin{alignat*}{2}%
+P(k|k')&=\frac{\frac{E_{kk'}}{\sum_kkN_k}}{\frac{<k>N_k}{\sum_kkN_k}}\\%
+\end{alignat*}%
+where \textbackslash{}sum\_kkN\_k is the total number of links in the model.%
+This simplifies to%
+\begin{alignat*}{2}%
+P(k|k')&=\frac{E_{kk'}}{<k>N_k}\\%
+\end{alignat*}
+
+%
+\section{Express the probability q\_k, discussed in this chapter, in terms of number of nodes N, average degree 〈k〉, N\_k, and E\_\{kk'\}.}%
+\label{sec:Expresstheprobabilityqk,discussedinthischapter,intermsofnumberofnodesN,averagedegreek,Nk,andEkk.}%
+\begin{alignat*}{2}%
+q_k=\frac{kN_k}{\sum_kkN_k}\\%
+\end{alignat*}
+
+%
+\section{Based on these expressions, show that for any network we have e\_\{kk'\}=q\_kP(k'|k)}%
+\label{sec:Basedontheseexpressions,showthatforanynetworkwehaveekk=qkP(k|k)}%
+\begin{alignat*}{2}%
+e_{kk'}&=q_kP(k'|k)\\%
+q_kP(k'|k)&=\frac{kN_k}{\sum_kkN_k}\frac{E_{kk'}}{<k>N_k}\\%
+\end{alignat*}
+
+%
+\end{document}
