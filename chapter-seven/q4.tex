@@ -1,0 +1,58 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{geometry}%
+\geometry{tmargin=1cm,lmargin=10cm}%
+\usepackage{amsmath}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\section{Write the probability that there is a link between i and j, e\_\{ij\} and the probability that there is a link between i and j conditional on the existence of a link between l and s.}%
+\label{sec:Writetheprobabilitythatthereisalinkbetweeniandj,eijandtheprobabilitythatthereisalinkbetweeniandjconditionalontheexistenceofalinkbetweenlands.}%
+\begin{alignat*}{2}%
+P(e_{ij}) &= \frac{L}{{N \choose 2}}\\%
+P(e_{ij}) &= \frac{L}{\frac{N(N-1)}{2}}\\%
+P(e_{ij}) &= \frac{2L}{N(N-1)}\\%
+\end{alignat*}%
+\begin{alignat*}{2}%
+P(e_{ij}|e_{ls}) &= \frac{2(L-1)}{N(N-1)-2}\\%
+\end{alignat*}
+
+%
+\section{What is the ratio of such two probabilities for small networks? And for large networks?}%
+\label{sec:Whatistheratioofsuchtwoprobabilitiesforsmallnetworks?Andforlargenetworks?}%
+Small Networks%
+\begin{alignat*}{2}%
+\frac{P(e_{ij}|e_{ls})}{P(e_{ij})} &= \frac{(L-1)N(N-1)}{L[N(N-1)-2]}\\%
+\end{alignat*}%
+Large Networks%
+\begin{alignat*}{2}%
+\frac{P(e_{ij}|e_{ls})}{P(e_{ij})} &= 1\\%
+\end{alignat*}%
+since N goes to infinity.
+
+%
+\section{What do you obtain for the quantities discussed in (a) and (b) if you use the Erdős{-}Rényi G(N,p) model?}%
+\label{sec:Whatdoyouobtainforthequantitiesdiscussedin(a)and(b)ifyouusetheErds{-}RnyiG(N,p)model?}%
+\begin{alignat*}{2}%
+P(e_{ij} &= p)\\%
+\end{alignat*}%
+\begin{alignat*}{2}%
+P(e_{ij}|e_{ls}) &= p\\%
+\end{alignat*}%
+\begin{alignat*}{2}%
+\frac{P(e_{ij}|e_{ls})}{P(e_{ij})} &= 1\\%
+\end{alignat*}
+
+%
+\section{Based on the results found for (a){-}(c) discuss the implications of using the G(N,L) model instead of the G(N,p) model for generating random networks with small number of nodes.}%
+\label{sec:Basedontheresultsfoundfor(a){-}(c)discusstheimplicationsofusingtheG(N,L)modelinsteadoftheG(N,p)modelforgeneratingrandomnetworkswithsmallnumberofnodes.}%
+In small networks, the dependent nature between links is significant since the probability of a link is affected by other existing links. This makes the analysis for small networks more complex in the G(N,L) model compared to the G(N,p) model.
+
+%
+\end{document}
