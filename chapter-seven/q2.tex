@@ -1,0 +1,64 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{geometry}%
+\geometry{tmargin=1cm,lmargin=10cm}%
+\usepackage{amsmath}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\section{What is the degree distribution p\_k of this network?}%
+\label{sec:Whatisthedegreedistributionpkofthisnetwork?}%
+For the single node connected to N{-}1 degree one nodes (k=N{-}1)%
+\begin{alignat*}{2}%
+p_k=\frac{1}{N}\\%
+\end{alignat*}%
+For the N{-}1 degree one nodes (k=1)%
+\begin{alignat*}{2}%
+p_k=\frac{N-1}{N}\\%
+\end{alignat*}%
+For all other ks%
+\begin{alignat*}{2}%
+p_k=0\\%
+\end{alignat*}
+
+%
+\section{What is the probability q\_k that moving along a randomly chosen link we find at its end a node with degree k?}%
+\label{sec:Whatistheprobabilityqkthatmovingalongarandomlychosenlinkwefindatitsendanodewithdegreek?}%
+If k=1%
+\begin{alignat*}{2}%
+q_1=\frac{N-1}{N}\\%
+\end{alignat*}%
+If k=N{-}1%
+\begin{alignat*}{2}%
+q_{N-1}=\frac{1}{N}\\%
+\end{alignat*}%
+If k!=1 or k!=N{-}1%
+\begin{alignat*}{2}%
+q_k=0\\%
+\end{alignat*}
+
+%
+\section{Calculate the degree correlation coefficient r for this network. Use the expressions of e\_\{kk'\} and P(k'|k) calculated in HOMEWORK 7.1.}%
+\label{sec:Calculatethedegreecorrelationcoefficientrforthisnetwork.UsetheexpressionsofekkandP(k|k)calculatedinHOMEWORK7.1.}%
+The textbook shows that%
+\begin{alignat*}{2}%
+r&=\sum_{kk'}\frac{kk'(e_{kk'}-q_kq_{k'})}{\sum_{k'}k'^2q_{k'}-[\sum_{k'}k'q_{k'}]^2}\\%
+\end{alignat*}%
+Simplifying the equation we get%
+\begin{alignat*}{2}%
+r&=-\frac{1}{N-1}\\%
+\end{alignat*}
+
+%
+\section{Is this network assortative or disassortative? Explain why.}%
+\label{sec:Isthisnetworkassortativeordisassortative?Explainwhy.}%
+This network is disassortative since the hubs avoid each other, linking instead to small{-}degree nodes. The star network looks like a hub and spoke network, which is a characteristic of disassortative networks. Furthermore, r<0, supporting its disassortative nature.
+
+%
+\end{document}
